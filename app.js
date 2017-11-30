@@ -54,8 +54,13 @@ app.get('/preview', (req, res) => {
   }
 });
 
-// Main category page
+// Index redirects to /home-and-funiture
 app.get('/', (req, res, next) => {
+  res.redirect('/home-and-furniture');
+});
+
+// Main category page
+app.get('/home-and-furniture', (req, res, next) => {
   req.prismic.api.getByUID("category", "home-and-furniture",
     { 'fetchLinks' : ['category.main_image','category.name'] }
   )
@@ -69,7 +74,7 @@ app.get('/', (req, res, next) => {
 });
 
 // Route for sub categories
-app.get('/:uid', (req, res, next) => {
+app.get('/home-and-furniture/:uid', (req, res, next) => {
   const uid = req.params.uid;
   req.prismic.api.getByUID("category", uid,
     { 'fetchLinks' : ['category.main_image','category.name'] }
@@ -81,4 +86,9 @@ app.get('/:uid', (req, res, next) => {
   .catch((error) => {
     next(`error when retriving page ${error.message}`);
   });
+});
+
+// Index redirects to /home-and-funiture
+app.get('/{uid}', (req, res, next) => {
+  res.redirect('/home-and-furniture');
 });

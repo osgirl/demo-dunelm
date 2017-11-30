@@ -15,9 +15,9 @@ module.exports = {
   linkResolver: function(doc, ctx) {
     if (doc.type == 'category') {
       if (doc.uid == 'home-and-furniture') {
-        return '/';
+        return '/home-and-furniture';
       } else {
-        return '/' + doc.uid;
+        return '/home-and-furniture/' + doc.uid;
       }
     } 
     return '/';
