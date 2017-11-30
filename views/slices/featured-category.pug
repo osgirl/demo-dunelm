@@ -1,0 +1,16 @@
+#espot_catpg_flexible_10651.widget_height
+  .masonary-container
+    
+    for category in slice.items
+      a(href=Link.url(category.category, ctx.linkResolver))
+        - var imageUrl = category.category.data && category.category.data.main_image ? category.category.data.main_image.url : ''
+        .masonary-item.masonary-large-2(style='background-image: url(' + imageUrl + '); background-size: cover;')
+          .masonary-block.masonary-block-large.large-block-2
+            h2.has-subtitle
+              span.sub !{RichText.asText(category.short_description)}
+              br
+              |  !{RichText.asText(category.category_name)}
+            p !{RichText.asText(category.call_to_action)}
+          .masonary-overlay.masonary-overlay-large.large-block-2
+          
+  .clear_both

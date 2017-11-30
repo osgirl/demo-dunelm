@@ -1,0 +1,245 @@
+{
+  "Main" : {
+    "name" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1",
+        "label" : "Name",
+        "placeholder" : "Category name"
+      }
+    },
+    "uid" : {
+      "type" : "UID",
+      "config" : {
+        "label" : "URL",
+        "placeholder" : "seo-friendly-url-slug"
+      }
+    },
+    "main_image" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "Main image"
+      }
+    },
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "choices" : {
+          "offer_banner" : {
+            "type" : "Slice",
+            "fieldset" : "Offer Banner",
+            "description" : "A large offer banner",
+            "icon" : "monetization_on",
+            "non-repeat" : {
+              "percentage_off" : {
+                "type" : "Number",
+                "config" : {
+                  "label" : "Percentage off",
+                  "placeholder" : "Percentage off"
+                }
+              },
+              "label" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Label",
+                  "placeholder" : "Label"
+                }
+              },
+              "link" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "label" : "Link",
+                  "placeholder" : "Link to the offer page"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "featured_category" : {
+            "type" : "Slice",
+            "fieldset" : "Featured categories",
+            "description" : "Featured categories, squared banner with image and link",
+            "icon" : "crop_square",
+            "non-repeat" : { },
+            "repeat" : {
+              "short_description" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "paragraph",
+                  "label" : "Short description",
+                  "placeholder" : "Short description"
+                }
+              },
+              "category_name" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading2",
+                  "label" : "Category name",
+                  "placeholder" : "Name displayed on banner"
+                }
+              },
+              "call_to_action" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading5",
+                  "label" : "Call to action",
+                  "placeholder" : "e.g., \"Shop\""
+                }
+              },
+              "category" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "customtypes" : [ "category" ],
+                  "label" : "Category",
+                  "placeholder" : "Pick a category to link to"
+                }
+              }
+            }
+          },
+          "seo_text" : {
+            "type" : "Slice",
+            "fieldset" : "SEO text",
+            "description" : "SEO text",
+            "icon" : "short_text",
+            "non-repeat" : {
+              "text" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "multi" : "paragraph, heading4, strong, hyperlink",
+                  "label" : "Text",
+                  "placeholder" : "SEO text goes here"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "logos_banner" : {
+            "type" : "Slice",
+            "fieldset" : "Logos banner",
+            "description" : "Banner with 5 logos",
+            "icon" : "brightness_1",
+            "non-repeat" : {
+              "title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Title",
+                  "placeholder" : "Banner title"
+                }
+              }
+            },
+            "repeat" : {
+              "brand" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "customtypes" : [ "category" ],
+                  "tags" : [ "brand" ],
+                  "label" : "Brand",
+                  "placeholder" : "Pick a brand"
+                }
+              },
+              "brand_logo" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Brand logo"
+                }
+              }
+            }
+          },
+          "featured_products" : {
+            "type" : "Slice",
+            "fieldset" : "Featured products",
+            "description" : "Manual selection of products with a title",
+            "icon" : "star_border",
+            "non-repeat" : {
+              "title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading2",
+                  "label" : "Title",
+                  "placeholder" : "Title of the selection"
+                }
+              }
+            },
+            "repeat" : { }
+          }
+        }
+      }
+    }
+  },
+  "Category Menu" : {
+    "sidebar" : {
+      "type" : "Select",
+      "config" : {
+        "options" : [ "Category list (listed below)", "Search facets (specify PIM category below)" ],
+        "default_value" : "Category list (listed below)",
+        "label" : "Sidebar",
+        "placeholder" : "Sidebar style"
+      }
+    },
+    "body1" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "choices" : {
+          "categories_list" : {
+            "type" : "Slice",
+            "fieldset" : "Categories list",
+            "description" : "A list of category",
+            "icon" : "format_list_bulleted",
+            "non-repeat" : {
+              "main_category" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "customtypes" : [ "category" ],
+                  "label" : "Main category",
+                  "placeholder" : "Link to the main category"
+                }
+              }
+            },
+            "repeat" : {
+              "category" : {
+                "type" : "Link",
+                "config" : {
+                  "select" : "document",
+                  "customtypes" : [ "category" ],
+                  "label" : "Category",
+                  "placeholder" : "Pick a category"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "SEO" : {
+    "canonical_url" : {
+      "type" : "Group",
+      "config" : {
+        "fields" : {
+          "category" : {
+            "type" : "Link",
+            "config" : {
+              "select" : "document",
+              "customtypes" : [ "category" ],
+              "label" : "Category",
+              "placeholder" : "Pick a category"
+            }
+          }
+        },
+        "label" : "Canonical URL"
+      }
+    }
+  }
+}

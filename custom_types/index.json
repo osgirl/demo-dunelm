@@ -1,0 +1,6 @@
+[{
+  "id": "category",
+  "name": "Category",
+  "repeatable": true,
+  "value": "category.json"
+}]

@@ -1,0 +1,45 @@
+block variables
+
+
+html.js.no-touch.cssgradients.svg.boxsizing.js.no-touch.cssgradients.svg.boxsizing(lang='en', style='')
+  head
+    title Dunelm Demo
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(http-equiv='cleartype', content='on')
+    meta(name='description', content="Wide range of Homeware available to buy today at Dunelm, the UK's largest homewares and soft furnishings store. Order now for a fast home delivery or reserve in store.")
+    
+    link(rel='stylesheet', href='/css/site.min.css')
+    link(rel='stylesheet', href='/css/site-2017.min.css')
+    link(rel='stylesheet', href='/css/extra.css')
+    link(rel='stylesheet', href='/css/styles.css')
+    
+    //script(src='/js/iframeResizer.min.js')
+    //script(src='/js/modernizr-2.6.2.min.js')
+    //script(src='/js/main.min.js')
+    
+    link(rel='shortcut icon', href='/img/favicon.png')
+    link(href='https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Patua+One', rel='stylesheet')
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel='stylesheet')
+
+    // Required for Previews and Experiments
+    script(src="//code.jquery.com/jquery-2.1.1.min.js")
+    script
+      = ctx?"window.prismic = { endpoint: '" + ctx.endpoint + "' };":""
+    script(src="//static.cdn.prismic.io/prismic.min.js")
+
+  body.browse.category.brandNavDisplayed.breakpoint-940(style='padding-top: 138px;' data-wio-id=activeDoc.id)
+  
+    include ./layout/header.pug
+  
+    main#content(role='main')
+      .wrap
+      
+        block body
+
+    include ./layout/footer.pug
+
+
+

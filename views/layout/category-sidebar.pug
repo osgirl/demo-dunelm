@@ -1,0 +1,15 @@
+.category__sidebar
+  nav.category__menu
+    if document.data.body1[0]
+      - var menu = document.data.body1[0]
+      nav.category__menu
+
+        h4
+          if menu.primary.main_category.data
+            a(href=Link.url(menu.primary.main_category, ctx.linkResolver)) 
+              != RichText.asText(menu.primary.main_category.data.name)
+          else
+            != "Choose a category"
+        for link in menu.items
+          a(href=Link.url(link.category, ctx.linkResolver)) 
+            != RichText.asText(link.category.data.name)
