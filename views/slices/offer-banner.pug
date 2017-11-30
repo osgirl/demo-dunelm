@@ -2,7 +2,12 @@
   .masonary-container
     .offers-banner-1
       .sale-message-container-left-g
-        img(style='-webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.85));', alt='Furniture Sale', src='http://images.dunelm.com/i/dm/PDD-Upto30-with-outline-centered.png')
+        img(style='-webkit-filter: drop-shadow(3px 3px 3px rgba(34, 34, 34, 0.85));', alt='Furniture Sale', src='/img/PDD-Upto30-with-outline-centered.png')
+      .sale-discount
+        span.up-to Up to
+        span.discount-amount !{slice.primary.percentage_off}
+        span.percent %
+        span.off Off
       .offers-banner-1b
         ul
           a(href='/category/offers', manual_cm_sp='Bedding-_-link_1-_-wk14-Save')

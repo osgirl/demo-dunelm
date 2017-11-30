@@ -58,3 +58,71 @@ footer {
 .masonary-block p {
   text-transform: uppercase;
 }
+
+.sale-discount {
+  width: 125px;
+  height: 55px;
+  background: #ee1c24;
+/*  background: rgba(0, 0, 0, 0.5);*/
+  position: absolute;
+  top: 0;
+  left: 25px;
+  z-index: 4;
+  overflow: visible;
+  margin-left: 20%;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 1100px){
+  .sale-discount {
+    margin-left: 8%;
+    left: 46px;
+  }
+}
+@media screen and (max-width: 900px){
+  .sale-discount {
+      margin-left: 5%;
+  }
+}
+@media screen and (max-width: 800px){
+  .sale-discount {
+      margin-left: 0%;
+  }
+}
+
+.sale-discount .up-to {
+  position: absolute;
+  top: 21px;
+  left: 0px;
+  font-size: 13px;
+  
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+.sale-discount .discount-amount {
+  position: absolute;
+  top: 22px;
+  right: 36px;
+  font-size: 53px;
+  font-weight: 900;
+}
+
+.sale-discount .percent {
+  position: absolute;
+  top: 15px;
+  left: 87px;
+  font-size: 31px;
+  font-weight: 900;
+}
+
+.sale-discount .off {
+  position: absolute;
+  top: 36px;
+  left: 87px;
+  font-size: 15px;
+  font-weight: 700;
+}
