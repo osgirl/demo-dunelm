@@ -20,11 +20,10 @@ block body
             include ./slices/offer-banner.pug
           when 'featured_category'
             include ./slices/featured-category.pug
+          when 'featured_products'
+            include ./slices/featured-products.pug
           default
             p Need to add: !{slice.slice_type}
-
-      
-      include ./slices/favourites.pug
 
   //pre 
     != JSON.stringify(document, null, 4)

@@ -1,0 +1,23 @@
+#recs1.rr.rr--large
+  h4.rr__heading !{RichText.asText(slice.primary.title)}
+  .rr__carousel.slick-initialized.slick-slider
+    .slick-list.draggable(aria-live='polite', tabindex='0')
+      .slick-track(style='opacity: 1; width: 2205px; transform: translate3d(0px, 0px, 0px);')
+        
+        - var count = 0
+        for item in slice.items
+          - var product = item.product
+          .rr__item.slick-slide.slick-current.slick-active(data-slick-index=count, aria-hidden='false', style='width: 147px;')
+            a(href="#", title=product.title, rel='nofollow')
+              img(src=product.image_url, alt=product.description)
+            .rr__pricing
+              a(href='#', title=product.title, rel='nofollow') !{product.title}
+              p.price !{product.price}
+              - var ratingClass = 'rating-' + product.rating + '-0'
+              .product-rating(class=ratingClass)
+                span ☆☆☆☆☆
+                span.is-invisible Rating of !{product.rating} from 5 reviews
+          - count++
+                
+    button.slick-prev.slick-disabled(type='button', data-role='none', aria-label='previous', style='display: block;') Previous
+    button.slick-next(type='button', data-role='none', aria-label='next', style='display: block;') Next
